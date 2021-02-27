@@ -21,4 +21,18 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index())
   }
+
+  def generateTable() = Action {implicit request: Request[AnyContent] => 
+    slick.codegen.SourceCodeGenerator.main(
+      Array("slick.jdbc.MySQLProfile", 
+            "com.mysql.jdbc.Driver", 
+            "jdbc:mysql://localhost:3306/scalatest?nullNamePatternMatchesAll=true",
+            "./app",
+            "tables",
+            "dbuser",
+            "root")
+    )
+    Ok("Tables generated")
+  }
+
 }
