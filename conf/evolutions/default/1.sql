@@ -1,4 +1,4 @@
-# -- !Ups
+--- !Ups
 
 CREATE TABLE IF NOT EXISTS `User` (
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `FriendRequest` (
     ON UPDATE NO ACTION)
     ENGINE = InnoDB;
 
-# -- !Downs
+--- !Downs
 
 DROP TABLE `FriendRequest`;
 DROP TABLE `Friends`;
