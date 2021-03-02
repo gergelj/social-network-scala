@@ -1,8 +1,4 @@
--- -----------------------------------------------------
--- Table `User`
--- -----------------------------------------------------
-
--- !Ups
+# -- !Ups
 
 CREATE TABLE IF NOT EXISTS `User` (
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -15,9 +11,6 @@ CREATE TABLE IF NOT EXISTS `User` (
     UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
     ENGINE = InnoDB;
 
--- -----------------------------------------------------
--- Table `Post`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Post` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `content` VARCHAR(280) NOT NULL,
@@ -32,10 +25,6 @@ CREATE TABLE IF NOT EXISTS `Post` (
     ON UPDATE NO ACTION)
     ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `Likes`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Likes` (
     `post_id` INT NOT NULL,
     `user_id` INT NOT NULL,
@@ -54,10 +43,6 @@ CREATE TABLE IF NOT EXISTS `Likes` (
     ON UPDATE NO ACTION)
     ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `Friends`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Friends` (
     `user_id1` INT NOT NULL,
     `user_id2` INT NOT NULL,
@@ -77,9 +62,6 @@ CREATE TABLE IF NOT EXISTS `Friends` (
     ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `FriendRequest`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `FriendRequest` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `date` TIMESTAMP NULL,
@@ -101,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `FriendRequest` (
     ON UPDATE NO ACTION)
     ENGINE = InnoDB;
 
--- !Downs
+# -- !Downs
 
 DROP TABLE `FriendRequest`;
 DROP TABLE `Friends`;
